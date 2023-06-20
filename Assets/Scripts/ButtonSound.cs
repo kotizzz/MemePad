@@ -1,14 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Button))]
 public class ButtonSound : MonoBehaviour
 {
-    public AudioSource mySound;
-    public AudioClip clickSound;
+    [SerializeField] private string _nameButtonSound;
 
-    public void ClickSound()
+    private Button _soundButton;
+
+    private void Awake()
     {
-        mySound.PlayOneShot(clickSound);
+        _soundButton = GetComponent<Button>();
+        _soundButton.onClick.AddListener(PlaySound);
+    }
+
+    private void OnDestroy()
+    {
+        _soundButton.onClick.RemoveListener(PlaySound);
+    }
+
+    private void PlaySound()
+    {
+        AudioPlayer.Instance.PlaySound(_nameButtonSound);
     }
 }
