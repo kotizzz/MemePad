@@ -34,6 +34,20 @@ public class AudioPlayer : MonoBehaviour
 
             _musicAudioSource.PlayOneShot(s.audioClip);
         }
+        else
+        {
+            _musicAudioSource.Stop();
+
+            Sound s = Array.Find(_sounds, sound => sound.name == name);
+
+            if (s == null)
+            {
+                Debug.LogError(name + " not found.");
+                return;
+            }
+
+            _musicAudioSource.PlayOneShot(s.audioClip);
+        }
     }
 }
 
