@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 3591751837545577433}
   - component: {fileID: 1582101727896330872}
   - component: {fileID: 8385262361888327551}
+  - component: {fileID: 8378912823972737785}
   m_Layer: 5
   m_Name: AdsImage
   m_TagString: Untagged
@@ -194,14 +195,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.3882353}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 672fb43544899d0429b722e0d1bcfd70, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -211,6 +212,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &8378912823972737785
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800405403980612892}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1646879235011910110
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4985ca1ae2323f54e80bc2d3886d1d0a, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -347,4 +360,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d5d1d7ee415b04eaa4e844096c3a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameButtonSound: WASD
+  _nameButtonSound: Edgar
