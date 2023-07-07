@@ -19,7 +19,7 @@ public class ButtonSound : MonoBehaviour
         _soundButton.onClick.RemoveListener(PlaySound);
     }
 
-    private void PlaySound()
+    public virtual void PlaySound()
     {
         AudioPlayer.Instance.PlaySound(_nameButtonSound);
     }

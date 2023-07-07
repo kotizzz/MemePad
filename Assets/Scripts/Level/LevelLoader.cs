@@ -6,21 +6,15 @@ using TMPro;
 
 public class LevelLoader : MonoBehaviour
 {
-    public string _sceneName;
-
-    private void Start() {
-        LoadLevel(_sceneName);
-    }
-
     public Slider slider;
     public TMP_Text progressText;
 
-    public void LoadLevel (string sceneName) {
-        StartCoroutine(LoadAsyncronously(sceneName));
+    public void LoadLevel (int sceneIndex) {
+        StartCoroutine(LoadAsyncronously(sceneIndex));
     }
 
-    IEnumerator LoadAsyncronously (string sceneName) {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+    IEnumerator LoadAsyncronously (int sceneIndex) {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         while (operation.isDone == false){
             float progress = Mathf.Clamp01(operation.progress / .9f);
