@@ -23,14 +23,13 @@ public class AdsButton : MonoBehaviour
         _adsButton.onClick.AddListener(PlaySound);
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-        if (YandexGamesSdk.IsInitialized)
-        {
-            StartCoroutine(GetData());
-        }
-#endif
+        yield return YandexGamesSdk.Initialize();
+
+        yield return GetData();
+
         LoadButtonData();
 
         if (_adsButtonData == null)
@@ -56,6 +55,35 @@ public class AdsButton : MonoBehaviour
             _adsImage.gameObject.SetActive(false);
             _clickCounter = -1;
         }
+#else
+        LoadButtonData();
+
+        if (_adsButtonData == null)
+        {
+            _adsButtonData = new AdsButtonData();
+        }
+
+        if (_adsButtonData.trueAd == 0)
+        {
+            _adsButtonData.IsActive = true;
+            SaveButtonData();
+        }
+
+        _isActive = _adsButtonData.IsActive;
+
+        if(_isActive == true)
+        {
+            _adsImage.gameObject.SetActive(true);
+            _clickCounter = 0;
+        }
+        else
+        {
+            _adsImage.gameObject.SetActive(false);
+            _clickCounter = -1;
+        }
+
+        yield return null;
+#endif
     }
 
     /*private void Update()
@@ -97,7 +125,6 @@ public class AdsButton : MonoBehaviour
         {
             YandexAds.Instance.ShowRewardAd();
             StartCoroutine(CheckRewarded());
-            SaveYandex();
         }
 #endif
     }
@@ -165,8 +192,6 @@ public class AdsButton : MonoBehaviour
 
     private IEnumerator GetData()
     {
-        PlayerAccount.RequestPersonalProfileDataPermission();
-
         string loadedString = "None";
 
         PlayerAccount.GetCloudSaveData((data) =>
