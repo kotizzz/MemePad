@@ -66,7 +66,7 @@ public class AdsButton : MonoBehaviour
 
             SaveManager.Reset(_saveKey, _adsButtonData);
             SaveButtonData();
-            //SaveYandex();
+            SaveYandex();
         }
     }*/
 
@@ -91,13 +91,13 @@ public class AdsButton : MonoBehaviour
             }
 
             SaveButtonData();
-            //SaveYandex();
         }
 #else
         if (_isActive == true)
         {
             YandexAds.Instance.ShowRewardAd();
             StartCoroutine(CheckRewarded());
+            SaveYandex();
         }
 #endif
     }
@@ -132,13 +132,13 @@ public class AdsButton : MonoBehaviour
         }
 
         SaveButtonData();
-        //SaveYandex();
+        SaveYandex();
     }
 
     private void OnDisable()
     {
         SaveButtonData();
-        //SaveYandex();
+        SaveYandex();
     }
 
     public void LoadButtonData()
@@ -154,42 +154,38 @@ public class AdsButton : MonoBehaviour
         Debug.Log("Я сохранил");
     }
 
-    /*public void SaveYandex()
+    public void SaveYandex()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
         string jsonDataString = JsonUtility.ToJson(_adsButtonData, true);
 
-        if (PlayerAccount.IsAuthorized)
-            PlayerAccount.SetCloudSaveData(jsonDataString);
+        PlayerAccount.SetCloudSaveData(jsonDataString);
 #endif
-    }*/
+    }
 
     private IEnumerator GetData()
     {
-        if (PlayerAccount.IsAuthorized)
+        PlayerAccount.RequestPersonalProfileDataPermission();
+
+        string loadedString = "None";
+
+        PlayerAccount.GetCloudSaveData((data) =>
         {
-            PlayerAccount.RequestPersonalProfileDataPermission();
+            loadedString = data;
+        });
 
-            string loadedString = "None";
-
-            PlayerAccount.GetCloudSaveData((data) =>
-            {
-                loadedString = data;
-            });
-
-            while (loadedString == "None")
-            {
-                yield return null;
-            }
-
-            if (loadedString == "{}")
-            {
-                yield break;
-            }
-
-            _adsButtonData = JsonUtility.FromJson<AdsButtonData>(loadedString);
-            SaveButtonData();
+        while (loadedString == "None")
+        {
+            yield return null;
         }
+
+        if (loadedString == "{}")
+        {
+            yield break;
+        }
+
+        _adsButtonData = JsonUtility.FromJson<AdsButtonData>(loadedString);
+        SaveButtonData();
     }
 }
 
