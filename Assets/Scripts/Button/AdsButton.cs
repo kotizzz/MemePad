@@ -134,7 +134,7 @@ public class AdsButton : MonoBehaviour
         if(_isActive == false && _clickCounter < 0)
         {
             AudioPlayer.Instance.PlaySound(_soundName);
-            Debug.Log("музыка");
+            //Debug.Log("музыка");
         }
         else
         {
@@ -172,13 +172,13 @@ public class AdsButton : MonoBehaviour
     {
         var data = SaveManager.Load<AdsButtonData>(_saveKey);
         _adsButtonData = data;
-        Debug.Log("Я загрузил");
+        //Debug.Log("Я загрузил");
     }
 
     public void SaveButtonData()
     {
         SaveManager.Save(_saveKey, _adsButtonData);
-        Debug.Log("Я сохранил");
+        //Debug.Log("Я сохранил");
     }
 
     public void SaveYandex()
@@ -192,25 +192,32 @@ public class AdsButton : MonoBehaviour
 
     private IEnumerator GetData()
     {
-        string loadedString = "None";
-
-        PlayerAccount.GetCloudSaveData((data) =>
+        if (YandexGamesSdk.IsInitialized)
         {
-            loadedString = data;
-        });
+            string loadedString = "None";
 
-        while (loadedString == "None")
-        {
-            yield return null;
+            PlayerAccount.GetCloudSaveData((data) =>
+            {
+                loadedString = data;
+            });
+
+            while (loadedString == "None")
+            {
+                yield return null;
+            }
+
+            if (loadedString == "{}")
+            {
+                yield break;
+            }
+
+            _adsButtonData = JsonUtility.FromJson<AdsButtonData>(loadedString);
+            SaveButtonData();
         }
-
-        if (loadedString == "{}")
+        else
         {
-            yield break;
+            yield return YandexGamesSdk.Initialize();
         }
-
-        _adsButtonData = JsonUtility.FromJson<AdsButtonData>(loadedString);
-        SaveButtonData();
     }
 }
 

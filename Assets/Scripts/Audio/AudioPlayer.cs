@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using Plugins.Audio.Core;
 
 public class AudioPlayer : MonoBehaviour
 {
@@ -9,7 +8,6 @@ public class AudioPlayer : MonoBehaviour
 
     [Header("Audio Sources")]
     [SerializeField] private AudioSource _musicAudioSource;
-    [SerializeField] private SourceAudio _sourceAudio;
 
     [Header("Sound")]
     [SerializeField] private Sound[] _sounds;
@@ -24,9 +22,7 @@ public class AudioPlayer : MonoBehaviour
 
     public void PlaySound(string name)
     {
-        _sourceAudio.Play(name);
-
-        /*if(_musicAudioSource.isPlaying == false)
+        if (_musicAudioSource.isPlaying == false)
         {
             Sound s = Array.Find(_sounds, sound => sound.name == name);
 
@@ -51,7 +47,7 @@ public class AudioPlayer : MonoBehaviour
             }
 
             _musicAudioSource.PlayOneShot(s.audioClip);
-        }*/
+        }
     }
 }
 

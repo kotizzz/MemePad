@@ -1554,7 +1554,6 @@ GameObject:
   - component: {fileID: 587497809}
   - component: {fileID: 587497808}
   - component: {fileID: 587497807}
-  - component: {fileID: 587497810}
   m_Layer: 0
   m_Name: AudioPlayer
   m_TagString: Untagged
@@ -1671,64 +1670,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _musicAudioSource: {fileID: 587497807}
-  _sourceAudio: {fileID: 587497810}
   _sounds:
   - name: Barley
-    audioClip: {fileID: 8300000, guid: 3432096c04b198941a01a26f72df8bfc, type: 3}
+    audioClip: {fileID: 8300000, guid: 744106b348ed60b4a9868eb46d537ac5, type: 3}
   - name: ElPrimo
-    audioClip: {fileID: 8300000, guid: 008068c6da6e49942951a319be06758c, type: 3}
+    audioClip: {fileID: 8300000, guid: 2e2c2757722efe84ebcab8166618fd52, type: 3}
   - name: Poco
-    audioClip: {fileID: 8300000, guid: 42263da56ac6fb9479660a1bed57d86d, type: 3}
+    audioClip: {fileID: 8300000, guid: b2e6e01d4ce2c13469ad2af92434868c, type: 3}
   - name: Rosa
-    audioClip: {fileID: 8300000, guid: aece98e40c8b6e046a3cf2418cda88d5, type: 3}
+    audioClip: {fileID: 8300000, guid: 139f3cd39de365346baf0304131d43f5, type: 3}
   - name: Gus
-    audioClip: {fileID: 8300000, guid: 16a2937052dc13d4b92678715438d4d5, type: 3}
+    audioClip: {fileID: 8300000, guid: d836dd059006e474f85f3583e57d4faa, type: 3}
   - name: Jacky
-    audioClip: {fileID: 8300000, guid: ddbe5fa46f3667c4fa60906d67398404, type: 3}
+    audioClip: {fileID: 8300000, guid: 49eb398d0af21b742906de94ec191b46, type: 3}
   - name: Penny
-    audioClip: {fileID: 8300000, guid: 636a971ced49ed641b166ffaf38e8f74, type: 3}
+    audioClip: {fileID: 8300000, guid: b3c0dcc358358a54591f54d1c1aa8d3b, type: 3}
   - name: Tik
-    audioClip: {fileID: 8300000, guid: b526c39c3d609744dafd49ddfa0a1555, type: 3}
+    audioClip: {fileID: 8300000, guid: 1a907fd940c62004dab1ef39dcb44a6d, type: 3}
   - name: Edgar
-    audioClip: {fileID: 8300000, guid: c9e8194c667e6e147ae209294e240339, type: 3}
+    audioClip: {fileID: 8300000, guid: 7c60ee7bec4c0c7459528b082c1252d6, type: 3}
   - name: Frank
-    audioClip: {fileID: 8300000, guid: e991469f468bce64f8728b12b2d182ef, type: 3}
+    audioClip: {fileID: 8300000, guid: 0b3d5b29df49dfa43beee29f7e64f2d0, type: 3}
   - name: Griff
-    audioClip: {fileID: 8300000, guid: 2994af3d06168b84d8c8f2992c09324a, type: 3}
+    audioClip: {fileID: 8300000, guid: 093d6542f92a36b4e90d5489413cf0f4, type: 3}
   - name: Nani
-    audioClip: {fileID: 8300000, guid: c9646ec23d19f0741adff4b994c821bf, type: 3}
+    audioClip: {fileID: 8300000, guid: 2d39bf50c281bbf46b751b185460c213, type: 3}
   - name: Squeak
-    audioClip: {fileID: 8300000, guid: a6ea503c8a8425841928e0bb5bd75382, type: 3}
+    audioClip: {fileID: 8300000, guid: 3e899340caf4a1a4bbe3c88352858e77, type: 3}
   - name: Sprout
-    audioClip: {fileID: 8300000, guid: 8a674ab161fae694eac33a27b62aea89, type: 3}
+    audioClip: {fileID: 8300000, guid: 47f1f686f57c47c4eb21bb10781be96d, type: 3}
   - name: Mortis
-    audioClip: {fileID: 8300000, guid: 59ee257f62adec94c8410cb6bd366ecf, type: 3}
+    audioClip: {fileID: 8300000, guid: 21bff9ad80a091942b009a43c1d331d0, type: 3}
   - name: Max
-    audioClip: {fileID: 8300000, guid: 1e6204963094e244fa201b33805da275, type: 3}
+    audioClip: {fileID: 8300000, guid: b9a06d914c1ddd6459ff8493dd51d8ee, type: 3}
   - name: Chester
-    audioClip: {fileID: 8300000, guid: 65f22702987651f429c6351e72c6108f, type: 3}
+    audioClip: {fileID: 8300000, guid: 8a9512107c968174db657ed7a193e993, type: 3}
   - name: Crow
-    audioClip: {fileID: 8300000, guid: 1ed91875f83a673448d168d057fa652e, type: 3}
+    audioClip: {fileID: 8300000, guid: 480296a55b9efd04db787405e54c02ce, type: 3}
   - name: Leon
     audioClip: {fileID: 8300000, guid: 4a4fcfc230de04a419ce913c52bab5f3, type: 3}
   - name: Spike
-    audioClip: {fileID: 8300000, guid: 2e641a198366fd34abe778e9c66e0fef, type: 3}
+    audioClip: {fileID: 8300000, guid: fd353a63ed37d7845b28a952d5ad2014, type: 3}
   - name: Fang
-    audioClip: {fileID: 8300000, guid: 3feaed76e74235e4281d256d686f8fce, type: 3}
+    audioClip: {fileID: 8300000, guid: ba9975f5d8ffda247a3e5187c080de52, type: 3}
   - name: Gavs
-    audioClip: {fileID: 8300000, guid: 5be05d7dc8952c94aa7b8a3c9d3e7ec4, type: 3}
+    audioClip: {fileID: 8300000, guid: fecda91eb8ae40f4e8f961bf667b69cf, type: 3}
   - name: RT
-    audioClip: {fileID: 8300000, guid: 131db9e727b6e5c428457e87359240d5, type: 3}
+    audioClip: {fileID: 8300000, guid: 75992eb076b6f7445933bbcf2d7ff1fc, type: 3}
   - name: Surge
-    audioClip: {fileID: 8300000, guid: 2d5b83e1677643c4a84b132098df5bbd, type: 3}
+    audioClip: {fileID: 8300000, guid: 7032b827485342446aaae02859d7fdbd, type: 3}
   - name: Bear
-    audioClip: {fileID: 8300000, guid: b47986c46f584e6468f41b3bf1555c5b, type: 3}
+    audioClip: {fileID: 8300000, guid: 212fc642902450149bba24b79af9278a, type: 3}
   - name: Dislike
-    audioClip: {fileID: 8300000, guid: e1a53988d2250e14dafac4c3b76afac1, type: 3}
+    audioClip: {fileID: 8300000, guid: 23e68080b63059743b88c7c36174d230, type: 3}
   - name: Cow
-    audioClip: {fileID: 8300000, guid: dedc33f38f2e4ef4e912c50de658616d, type: 3}
+    audioClip: {fileID: 8300000, guid: 9bed4a1e88ed57446addd8aa087c7d14, type: 3}
   - name: Shelly
-    audioClip: {fileID: 8300000, guid: fad5d8ce82ac06a499e265599ee79278, type: 3}
+    audioClip: {fileID: 8300000, guid: 5c96977f42b7f774d8f39ea98ba3954d, type: 3}
 --- !u!4 &587497809
 Transform:
   m_ObjectHideFlags: 0
@@ -1744,19 +1742,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &587497810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587497806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c896f32ca6a24109b8311345ab6aae6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Loop: 0
 --- !u!1001 &713960874
 PrefabInstance:
   m_ObjectHideFlags: 0
